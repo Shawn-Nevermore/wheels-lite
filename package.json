@@ -1,29 +1,36 @@
 {
-  "name": "wheels-lite",
-  "version": "0.0.1",
-  "description": "基于Vue的轻量级UI框架",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Shawn-Nevermore/wheels-lite.git"
-  },
-  "keywords": [
-    "vue",
-    "ui"
-  ],
-  "author": "Shawn Xu",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Shawn-Nevermore/wheels-lite/issues"
-  },
-  "homepage": "https://github.com/Shawn-Nevermore/wheels-lite#readme",
-  "dependencies": {
-    "vue": "^2.6.11"
-  },
-  "devDependencies": {
-    "parcel-bundler": "^1.12.4"
-  }
+    "name": "wheels-lite",
+    "version": "0.0.1",
+    "description": "基于Vue的轻量级UI框架",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Shawn-Nevermore/wheels-lite.git"
+    },
+    "keywords": [
+        "vue",
+        "ui"
+    ],
+    "author": "Shawn Xu",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/Shawn-Nevermore/wheels-lite/issues"
+    },
+    "homepage": "https://github.com/Shawn-Nevermore/wheels-lite#readme",
+    "dependencies": {
+        "vue": "^2.6.11",
+        "vue-hot-reload-api": "^2.3.4"
+    },
+    "devDependencies": {
+        "@vue/component-compiler-utils": "^3.1.2",
+        "parcel-bundler": "^1.12.4",
+        "sass": "^1.26.9",
+        "vue-template-compiler": "^2.6.11"
+    },
+    "alias": {
+        "vue": "./node_modules/vue/dist/vue.common.js"
+    }
 }
