@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/Shawn-Nevermore/wheels-lite/issues"
   },
-  "homepage": "https://github.com/Shawn-Nevermore/wheels-lite#readme"
+  "homepage": "https://github.com/Shawn-Nevermore/wheels-lite#readme",
+  "dependencies": {
+    "vue": "^2.6.11"
+  }
 }
