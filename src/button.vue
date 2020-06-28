@@ -1,7 +1,7 @@
 <template>
-    <button class="g-button" :class="{ [`icon-${iconPosition}`]: true }">
-        <g-icon class="icon" v-if="icon" :name="icon"></g-icon>
-        <g-icon class="loading" name="loading"></g-icon>
+    <button class="g-button" :class="{ [`icon-${iconPosition}`]: true }" @click="loading = !loading">
+        <g-icon class="loading icon" v-if="loading" name="loading"></g-icon>
+        <g-icon class="icon" v-if="icon && !loading" :name="icon"></g-icon>
         <!-- slot不能添加属性，所以用div包裹 -->
         <div class="content">
             <slot></slot>
@@ -13,6 +13,10 @@ export default {
     // props: ['icon', 'iconPosition'],
     props: {
         icon: {},
+        loading: {
+            type: Boolean,
+            default: false,
+        },
         iconPosition: {
             type: String,
             default: 'left',
@@ -55,7 +59,7 @@ export default {
     }
     > .icon {
         order: 1;
-        margin-right: 0.2em;
+        margin-right: 0.3em;
     }
     > .content {
         order: 2;
@@ -64,14 +68,14 @@ export default {
         > .icon {
             order: 2;
             margin-right: 0;
-            margin-left: 0.2em;
+            margin-left: 0.3em;
         }
         > .content {
             order: 1;
         }
     }
     .loading {
-        animation: spin 1s infinite reverse linear;
+        animation: spin 1s infinite linear;
     }
 }
 </style>
