@@ -1,6 +1,6 @@
 <template>
-    <button class="g-button" :class="{ [`g-icon-${iconPosition}`]: true }">
-        <g-icon v-if="icon" :name="icon"></g-icon>
+    <button class="g-button" :class="{ [`icon-${iconPosition}`]: true }">
+        <g-icon class="icon" v-if="icon" :name="icon"></g-icon>
 
         <!-- slot不能添加属性，所以用div包裹 -->
         <div class="content">
@@ -45,15 +45,15 @@ export default {
     &:focus {
         outline: none;
     }
-    > .g-icon {
+    > .icon {
         order: 1;
         margin-right: 0.2em;
     }
     > .content {
         order: 2;
     }
-    &.g-icon-right {
-        > .g-icon {
+    &.icon-right {
+        > .icon {
             order: 2;
             margin-right: 0;
             margin-left: 0.2em;
