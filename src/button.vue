@@ -1,7 +1,7 @@
 <template>
     <button class="g-button" :class="{ [`icon-${iconPosition}`]: true }">
         <g-icon class="icon" v-if="icon" :name="icon"></g-icon>
-
+        <g-icon class="loading" name="loading"></g-icon>
         <!-- slot不能添加属性，所以用div包裹 -->
         <div class="content">
             <slot></slot>
@@ -26,6 +26,14 @@ export default {
 </script>
 <style lang="scss">
 .g-button {
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
     height: var(--button-height);
     font-size: var(--font-size);
     padding: 0 1em;
@@ -61,6 +69,9 @@ export default {
         > .content {
             order: 1;
         }
+    }
+    .loading {
+        animation: spin 1s infinite reverse linear;
     }
 }
 </style>
