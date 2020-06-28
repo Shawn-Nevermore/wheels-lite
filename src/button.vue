@@ -53,6 +53,7 @@ export default {
     }
     &:active {
         background-color: var(--button-active-bg);
+        box-shadow: 0 0 0.2em 0 rgba(0, 0, 0, 0.5);
     }
     &:focus {
         outline: none;
