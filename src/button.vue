@@ -1,8 +1,8 @@
 <template>
-    <button class="g-button" :class="{ [`icon-${iconPosition}`]: true }">
-        <svg v-if="icon" class="icon" aria-hidden="true">
-            <use :xlink:href="`#i-${icon}`"></use>
-        </svg>
+    <button class="g-button" :class="{ [`g-icon-${iconPosition}`]: true }">
+        <g-icon v-if="icon" :name="icon"></g-icon>
+
+        <!-- slot不能添加属性，所以用div包裹 -->
         <div class="content">
             <slot></slot>
         </div>
@@ -45,20 +45,19 @@ export default {
     &:focus {
         outline: none;
     }
-    > .icon {
+    > .g-icon {
         order: 1;
         margin-right: 0.2em;
     }
     > .content {
         order: 2;
     }
-    &.icon-right {
-        > .icon {
+    &.g-icon-right {
+        > .g-icon {
             order: 2;
             margin-right: 0;
             margin-left: 0.2em;
         }
-
         > .content {
             order: 1;
         }
