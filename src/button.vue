@@ -1,5 +1,5 @@
 <template>
-    <button class="g-button" :class="{ [`icon-${iconPosition}`]: true }" @click="loading = !loading">
+    <button class="g-button" :class="{ [`icon-${iconPosition}`]: true }" @click="$emit('click')">
         <g-icon class="loading icon" v-if="loading" name="loading"></g-icon>
         <g-icon class="icon" v-if="icon && !loading" :name="icon"></g-icon>
         <!-- slot不能添加属性，所以用div包裹 -->
@@ -9,8 +9,11 @@
     </button>
 </template>
 <script>
+import Icon from './icon'
 export default {
-    // props: ['icon', 'iconPosition'],
+    components: {
+        'g-icon': Icon,
+    },
     props: {
         icon: {},
         loading: {
